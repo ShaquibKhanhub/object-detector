@@ -63,6 +63,10 @@ const ObjectDetection = () => {
   useEffect(() => {
     runCoco();
     showMyVideo();
+
+    return () => {
+      clearInterval(detectInterval);
+    };
   }, []);
   return (
     <div className="mt-8">
